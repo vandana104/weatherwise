@@ -5,10 +5,10 @@ Weather Wise is a simple, intuitive weather application that provides up-to-date
 
 Features:
 
-Real-time weather updates
-Displays weather conditions, temperature, humidity, pressure, and wind speed
-Shows current date and time for the searched location
-User-friendly interface
+1. Real-time weather updates
+2. Displays weather conditions, temperature, humidity, pressure, and wind speed
+3. Shows current date and time for the searched location
+4. User-friendly interface
 
 
 Getting Started
@@ -21,7 +21,7 @@ npm (Node Package Manager)
 
 Installation
 1. Clone the repository:
- git clone https://github.com/yourusername/weather-wise.git
+ git clone https://github.com/vandana104/weatherwise.git
 2. Navigate to the project directory: cd weatherwise
 3. Install the dependencies:npm install
 
@@ -38,6 +38,16 @@ Weather Wise uses a weather API to fetch weather data. Ensure you have an API ke
 Create a .env file in the root directory of the project.
 
 Add your API key to the .env file:REACT_APP_WEATHER_API_KEY=your_api_key_here
+
+
+Using Axios for Fetching Data
+
+Weather Wise utilizes Axios, a promise-based HTTP client for the browser and Node.js, to fetch weather data from the API.
+
+1. Install Axios: npm install axios
+2. Import Axios in your code: Import Axios in your code: import axios from 'axios';
+3. Use Axios to make GET requests to fetch weather data: const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
+
 
 
 Project Structure
