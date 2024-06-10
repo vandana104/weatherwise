@@ -1,10 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import ReactSwitch from "react-switch";
-import "./Navbar.css";
 import { RiSearchLine } from "react-icons/ri";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
+import "./Navbar.css";
 import { fetchWeather } from "../../api";
-import { MdDarkMode } from "react-icons/md";
 
 const Navbar = ({ setSubmittedText }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -13,9 +12,6 @@ const Navbar = ({ setSubmittedText }) => {
   const handleInputChange = (e) => {
     setSearchText(e.target.value);
   };
-  const themeToggler = () => {
-    
-  }
 
   const handleSearch = async () => {
     if (searchText.trim() === "") {
@@ -38,6 +34,10 @@ const Navbar = ({ setSubmittedText }) => {
     }
   };
 
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   return (
     <div>
       <nav className="navbar">
@@ -55,11 +55,15 @@ const Navbar = ({ setSubmittedText }) => {
           <RiSearchLine className="search" onClick={handleSearch} />
         </div>
         <div className="navbar-right">
-          {/* <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} /> */}
-          <div className="theme-toggler">
-            {" "}
-            <MdDarkMode className="darkmode" onClick={themeToggler} />
-            {/* <MdDarkMode className="darkmode" onClick={toggleTheme} /> */}
+          <div
+            className={`theme-toggler ${theme === "light" ? "light" : "dark"}`}
+            onClick={toggleTheme}
+          >
+            {theme === "light" ? (
+              <MdDarkMode className="darkmode-icon" />
+            ) : (
+              <MdLightMode className="lightmode-icon" />
+            )}
           </div>
         </div>
       </nav>

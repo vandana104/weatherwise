@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "../../contexts/ThemeContext";
 import { fetchWeather } from "../../api";
 import "./WeatherCard.css";
 
 const WeatherCard = ({ searchText }) => {
   const [weather, setWeather] = useState(null); 
   const [currentDateTime, setCurrentDateTime] = useState(new Date()); 
+  const { theme } = useContext(ThemeContext); // Get the current theme
 
   useEffect(() => {
     const getWeather = async () => {
@@ -41,7 +43,7 @@ const WeatherCard = ({ searchText }) => {
   const formattedDate = `${currentDateTime.getDate()} ${monthName} ${currentDateTime.getFullYear()}`;
 
   return (
-    <div className="weather-card">
+    <div className={`weather-card ${theme}`}>
       <div className="card-left">
         <p className="weather-condition">{weather.weather[0].description}</p> {/* Weather condition */}
         <h1>Weather in {weather.name}</h1> {/* City name */}

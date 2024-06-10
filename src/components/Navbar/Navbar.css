@@ -1,3 +1,5 @@
+/* Navbar.css */
+
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -28,57 +30,56 @@
   padding: 0.5rem;
   border: none;
   border-radius: 4px;
-  background-color: rgb(205,211,220);
-  color:  rgba(17, 21, 32, 0.956);
-  
+  background-color: rgb(205, 211, 220);
+  color: rgba(17, 21, 32, 0.956);
 }
+
 .search-bar:focus {
   outline: none;
 }
 
 .navbar-center:focus-within {
   background-color: rgba(213, 215, 222, 0.956);
-  ;
 }
+
 .search {
   padding: 0 12px 0 15px;
-  color:  rgba(17, 21, 32, 0.956);
+  color: rgba(17, 21, 32, 0.956);
   height: 30px;
   width: 25px;
-
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
 }
-.theme-toggler{
+
+.theme-toggler {
   border: 0.25pc solid transparent;
   width: 35px;
   height: 35px;
-  background-color:  rgba(213, 215, 222, 0.956);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.darkmode{
+
+.theme-toggler.light {
+  background-color: white;
+}
+
+.theme-toggler.dark {
+  background-color: black;
+}
+
+.darkmode-icon {
   color: black;
   width: 30px;
   height: 30px;
-
 }
 
-/* :root {
-  --background: #ffffff;
-  --text: #000000;
-  --border: #cccccc;
-  --input-background: #f0f0f0;
+.lightmode-icon {
+  color: white;
+  width: 30px;
+  height: 30px;
 }
-
-#dark {
-  --background: #333333;
-  --text: #ffffff;
-  --border: #555555;
-  --input-background: #555555;
-} */

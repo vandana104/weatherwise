@@ -1,32 +1,16 @@
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
- 
-    /* background-image: url('./assets/climate.jpg');  */
-    background-image: url('./assets/light.jpg'); 
-    /* background-image: url('./assets/weather.jpg');  */
-    background-size: cover; 
-    background-repeat: no-repeat;
-      color: rgba(213, 215, 222, 0.956);
-      height: 100vh;
-
-  
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgba(213, 215, 222, 0.956);
+  height: 100vh;
 }
 
-
-
-
-
-
-
-
-#dark{
-  background: black;
-}
-#light{
-  background-color: aliceblue;
+body.light {
+  background-image: url('./assets/light.jpg');
 }
 
-
-
+body.dark {
+  background-image: url('./assets/climate.jpg');
+}

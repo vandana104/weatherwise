@@ -6,7 +6,11 @@
   justify-content: space-around;
   padding: 20px;
   box-sizing: border-box;
-  color: rgb(60, 60, 64);
+  color: rgb(60, 60, 64); /* Default text color for light theme */
+}
+
+.weather-card.dark {
+  color: rgb(225, 225, 232); /* Text color for dark theme */
 }
 
 .card-left {
@@ -44,6 +48,7 @@
   font-size: large;
 }
 
+/* Media queries for responsiveness */
 @media (max-width: 1024px) {
   .weather-card {
     flex-direction: column;
