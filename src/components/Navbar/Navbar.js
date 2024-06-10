@@ -4,6 +4,7 @@ import ReactSwitch from "react-switch";
 import "./Navbar.css";
 import { RiSearchLine } from "react-icons/ri";
 import { fetchWeather } from "../../api";
+import { MdDarkMode } from "react-icons/md";
 
 const Navbar = ({ setSubmittedText }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -12,6 +13,9 @@ const Navbar = ({ setSubmittedText }) => {
   const handleInputChange = (e) => {
     setSearchText(e.target.value);
   };
+  const themeToggler = () => {
+    
+  }
 
   const handleSearch = async () => {
     if (searchText.trim() === "") {
@@ -43,7 +47,7 @@ const Navbar = ({ setSubmittedText }) => {
         <div className="navbar-center">
           <input
             type="text"
-            placeholder="Enter location" 
+            placeholder="Enter location"
             className="search-bar"
             value={searchText}
             onChange={handleInputChange}
@@ -51,7 +55,12 @@ const Navbar = ({ setSubmittedText }) => {
           <RiSearchLine className="search" onClick={handleSearch} />
         </div>
         <div className="navbar-right">
-          <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
+          {/* <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} /> */}
+          <div className="theme-toggler">
+            {" "}
+            <MdDarkMode className="darkmode" onClick={themeToggler} />
+            {/* <MdDarkMode className="darkmode" onClick={toggleTheme} /> */}
+          </div>
         </div>
       </nav>
     </div>
