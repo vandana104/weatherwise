@@ -14,7 +14,6 @@ const App = () => {
   return (
     <ThemeProvider>
       <div className="App" id={theme}>
-        {/* <div className="App" > */}
         <Navbar setSubmittedText={setSubmittedText} />
         {submittedText && <WeatherCard searchText={submittedText} />}
       </div>
@@ -24,7 +23,3 @@ const App = () => {
 
 export default App;
 
-// todo 1.responsive
-// day night
-//toggle dark and light,
-// multiple locations
